@@ -7,6 +7,6 @@ How Liberty Dies is a short choice-based game about the commanding a nation in t
 
 Play prototype [here](prototype/How_Liberty_Dies.html)
 
-## Play now
+## Play latest version
 
-Play How Liberty Dies [here](How_Liberty_Dies.html)
+Play the latest version of How Liberty Dies [here](How_Liberty_Dies.html)
