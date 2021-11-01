@@ -10,10 +10,6 @@ h1 {
     font-size: 300%;
 }
 
-h2 {
-    text-align: left;   
-}
-
 p {
     font-size: 125%;
     text-align: left;
@@ -41,5 +37,5 @@ a {
 }
 
 iframe {
-    align: center;   
+    align: left;   
 }
