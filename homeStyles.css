@@ -10,9 +10,13 @@ h1 {
     font-size: 300%;
 }
 
+h2 {
+    text-align: left;   
+}
+
 p {
     font-size: 125%;
-    text-align: center;
+    text-align: left;
 }
 
 a {
