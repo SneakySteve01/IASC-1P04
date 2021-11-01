@@ -39,3 +39,7 @@ a {
 .game-title {
     color:red;
 }
+
+iframe {
+    align: center;   
+}
