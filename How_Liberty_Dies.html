@@ -185,6 +185,10 @@ input {
  font-family: Serif;
 }
 
+#ui-bar {
+ display: none; 
+}
+
 #ui-bar-toggle {
  font-family: Serif; 
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">!function () {
@@ -288,7 +292,11 @@ Turning to leave, they asked &quot;Is there anything else I can do for you, Your
 	&lt;&lt;audio &quot;bgm_menu&quot; volume 0.5 loop play&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;audio &quot;bgm_menu&quot; pause&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Quit" tags="" position="300,300" size="100,100">&lt;&lt;script&gt;&gt;window.close()&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="ToggleSFX" tags="" position="0,500" size="100,100">&lt;&lt;if $sfx == 0&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Quit" tags="" position="301,300" size="100,100">&lt;&lt;script&gt;&gt;
+if (confirm(&quot;Close Tab?&quot;)) {
+    close();
+}
+&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="ToggleSFX" tags="" position="0,500" size="100,100">&lt;&lt;if $sfx == 0&gt;&gt;
 	&lt;&lt;set $sfx to 1&gt;&gt;
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;set $sfx to 0&gt;&gt;
@@ -300,7 +308,7 @@ Turning to leave, they asked &quot;Is there anything else I can do for you, Your
 	&lt;&lt;set $music to 0&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;goto Options&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Launcher" tags="" position="0,0" size="100,100">Please enter your first name:
+&lt;&lt;goto Options&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Launcher" tags="" position="0,1" size="100,100">Please enter your first name:
 &lt;&lt;textbox &quot;$fName&quot; &quot;John&quot;&gt;&gt;
 Please enter your last name:
 &lt;&lt;textbox &quot;$lName&quot; &quot;Doe&quot;&gt;&gt;
@@ -382,7 +390,7 @@ Gazing out your floor to ceiling window at the bussling city below you, you unde
 	&lt;&lt;audio &quot;bgm_chapterOne&quot; pause&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set $lastedTurns to $lastedTurns + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="SetDownLetter" tags="" position="600,500" size="100,100">Setting the letter down on your desk, it dawns on you how dire a situation you now find yourself in.
+&lt;&lt;set $lastedTurns to $lastedTurns + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="SetDownLetter" tags="" position="600,498" size="100,100">Setting the letter down on your desk, it dawns on you how dire a situation you now find yourself in.
 
 &lt;&lt;if $askedForDrink == true&gt;&gt;
 Your assistant enters the room, a bottle of Lunar ale in one hand and a glass in the other. Depositing a glass they begin to pour you some, and notice the serious look in your eye.
@@ -393,6 +401,11 @@ Your assistant enters the room, a bottle of Lunar ale in one hand and a glass in
 
 [[No, not at all.|TalkToAssistant]]
 &lt;&lt;else&gt;&gt;
+
+&lt;div class=&quot;image&quot;&gt;
+	&lt;img src=&quot;assets/images/img_window.png&quot; alt=&quot;&quot; /&gt;
+&lt;/div&gt;
+
 Gazing out your floor to ceiling window at the bussling city below you, you understand the gravity of the decision you are about to make.
 
 [[Move to arrest for them for treason|ArrestTheDelegation]]
@@ -474,6 +487,10 @@ You know there are plenty of problems with the Republic, after all it&#39;s your
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;set $lastedTurns to $lastedTurns + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="CallEmergencyMeeting" tags="" position="1000,700" size="100,100">A few hours later, you find yourself standing in the High Council chamber of the Republic, the gathered councillors restless to hear what you have assembled them for.
+
+&lt;div class=&quot;image&quot;&gt;
+	&lt;img src=&quot;assets/images/img_council.png&quot; alt=&quot;&quot; /&gt;
+&lt;/div&gt;
 
 [[Tell the council about the message|TellCouncilAboutMessage]]
 
@@ -567,6 +584,10 @@ The guards around you hesitate for a moment, but comply, cuffing your hands and 
 &lt;&lt;set $lastedTurns to $lastedTurns + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="EmergencySession" tags="" position="1000,1000" size="100,100">A few hours later, you stand at the speaker&#39;s podium before the High Council of the Republic. Never before has a Premier had to deal with a crisis of this magnitude. News of the &quot;Sepratist Crisis&quot; has already started to spread to major news outlets, and you are certain the entire chamber will have seen the video by now. Dejectedly, you realise a number of council seats are empty. You know well why.
 
 This speech will be recorded and repeated throughout to annals of history for centuries. Pausing to consider, you then begin with:
+
+&lt;div class=&quot;image&quot;&gt;
+	&lt;img src=&quot;assets/images/img_council.png&quot; alt=&quot;&quot; /&gt;
+&lt;/div&gt;
 
 [[Start by laying out the facts|SecessionSpeechOne][$sSpeechPartOne to &quot;At 11:34 this morning, I received a communique from the Delegation of 13. They laid out in no uncertain therms their demands of me, and threatened this republic if I refused to comply. I do not negotiate with terrorists. I ordered my security service to arrest the delegation, but alas all but one of them escaped justice. This brings us to now, after they have declared a soverign state.&quot;]]
 
@@ -967,6 +988,8 @@ The Ocean Republic, and its High Council, have become abominations. The council 
 
 From this day forward, I devote my life to building a new government. I will correct the Republic&#39;s failures and bring peace and justice back to the people with the formation of the Confederation of the West Ocean.&quot;
 
+
+
 [[Speak to the chamber|SpeakToChamber]]
 
 &lt;&lt;if $music == 1&gt;&gt;
@@ -978,6 +1001,10 @@ From this day forward, I devote my life to building a new government. I will cor
 &lt;&lt;set $lastedTurns to $lastedTurns + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="SpeakToChamber" tags="" position="1200,1300" size="100,100">Never before has a Premier had to deal with a crisis of this magnitude. News of the &quot;Sepratist Crisis&quot; will surley have already started to spread to the people and reached the other councillors.
 
 This speech will be recorded and repeated throughout to annals of history for centuries. Pausing to consider, you then begin with:
+
+&lt;div class=&quot;image&quot;&gt;
+	&lt;img src=&quot;assets/images/img_council.png&quot; alt=&quot;&quot; /&gt;
+&lt;/div&gt;
 
 [[Start by laying out the facts|SecessionSpeechOne][$sSpeechPartOne to &quot;At 11:34 this morning, I received a communique from the Delegation of 13. They laid out in no uncertain therms their demands of me, and threatened this republic if I refused to comply. I offered them a chance, a chance to be true to what has happened, and they have declared a soverign state because of it.&quot;]]
 
@@ -1192,6 +1219,10 @@ Never before has a Premier had to deal with a crisis of this magnitude. News of 
 
 This speech will be recorded and repeated throughout to annals of history for centuries. Pausing to consider, you then begin with:
 
+&lt;div class=&quot;image&quot;&gt;
+	&lt;img src=&quot;assets/images/img_council.png&quot; alt=&quot;&quot; /&gt;
+&lt;/div&gt;
+
 [[Start by laying out the facts|SecessionSpeechOne][$sSpeechPartOne to &quot;At 11:34 this morning, I received a communique from the Delegation of 13. They laid out in no uncertain therms their demands of me, and threatened this republic if I refused to comply. I offered them a chance, a chance to be true to what has happened, and they have declared a soverign state because of it.&quot;]]
 
 [[Start the speech with fire|SecessionSpeechOne][$sSpeechPartOne to &quot;The treasonous delegation of 13 made demands that I arrest the elected people in this room, or that I would be attacked myself. I will not negotiate with those terrorists, and we will overcome this great obstacle!&quot;]]
@@ -1204,7 +1235,7 @@ This speech will be recorded and repeated throughout to annals of history for ce
 	&lt;&lt;audio &quot;bgm_speech&quot; pause&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set $lastedTurns to $lastedTurns + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="63" name="WarStart" tags="" position="1900,1600" size="100,100">It is a long and brutal war. Over the course of the next 3 years your newly founded Army of the Republic fights hard for dominance against the Army of the Confederation.
+&lt;&lt;set $lastedTurns to $lastedTurns + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="63" name="WarStart" tags="" position="1900,1602" size="100,100">It is a long and brutal war. Over the course of the next 3 years your newly founded Army of the Republic fights hard for dominance against the Army of the Confederation.
 
 Before you know it the time for elections has come, but you postpone them, citing the war making elections too great a risk. As the battles drag on, more and more propaganda is required in order to keep the fighting spirit alive, and the propaganda grows more and more centered around you, rather than the republic.
 
@@ -1243,7 +1274,7 @@ Your door chimes, and your Chief of Guard enters the room.
 	&lt;&lt;audio &quot;bgm_chapterTwo&quot; pause&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set $lastedTurns to $lastedTurns + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="65" name="DiploStart" tags="" position="2700,1600" size="100,100">[[End the day|GameOverIncomplete]]
+&lt;&lt;set $lastedTurns to $lastedTurns + 1&gt;&gt;</tw-passagedata><tw-passagedata pid="65" name="DiploStart" tags="" position="2699,1600" size="100,100">[[End the day|GameOverIncomplete]]
 
 &lt;&lt;if $music == 1&gt;&gt;
 	&lt;&lt;audio &quot;bgm_chapterTwo&quot; volume 0.1 loop play&gt;&gt;
@@ -1307,7 +1338,7 @@ Your guard hesitates a moment, then salutes you, and exits the room.
 
 Thanks for playing &quot;How Liberty Dies&quot;
 
-Unfortunatley, this pathway of the story cannot be progressed further in the prototype release of the game. Fear not, for there are still several full pathways for you to explore in HLD. Thanks again for playing and I hope you enjoyed!
+Unfortunatley, this pathway of the story cannot be progressed further in this release of the game. Fear not, for there are still several full pathways for you to explore in HLD. Thanks again for playing and I hope you enjoyed!
 
 Congratulations, Liberty did not die (yet).
 
